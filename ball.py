@@ -47,8 +47,9 @@ while 1:
         effect.play()
     #check for y limits
     if ballrect.top < 0 or ballrect.bottom > height:
-        #reverse y direction
+        #reverse y direction and play sound effect
         speed[1] = -speed[1]
+        effect.play()
 
     #clear screen
     screen.fill(black)
