@@ -24,6 +24,9 @@ ball = pygame.image.load("intro_ball.gif")
 #create a sprite using ball variable??
 ballrect = ball.get_rect()
 
+#load sfx into a variable
+effect = pygame.mixer.Sound("beep.wav")
+
 #main game loop
 while 1:
     
@@ -39,8 +42,9 @@ while 1:
     
     #check for x limits
     if ballrect.left < 0 or ballrect.right > width:
-        #reverse x direction
+        #reverse x direction and play sound effect
         speed[0] = -speed[0]
+        effect.play()
     #check for y limits
     if ballrect.top < 0 or ballrect.bottom > height:
         #reverse y direction
